@@ -35,8 +35,16 @@ class PicturesController < ApplicationController
 			:title  => "Into the Poppies",
 			:artist => "John Wilhelm",
 			:url    => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
-	  }
-	]
+	    }
+	  ]
 		@picture = @pictures[params[:id].to_i]
 	end
+
+	def new
+	end
+
+	def create
+		render :text => "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+	end
+	
 end
